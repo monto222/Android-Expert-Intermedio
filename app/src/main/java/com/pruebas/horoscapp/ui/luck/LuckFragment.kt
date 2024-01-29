@@ -5,12 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.pruebas.horoscapp.R
 import com.pruebas.horoscapp.databinding.FragmentHoroscopeBinding
 import com.pruebas.horoscapp.databinding.FragmentLuckBinding
+import com.pruebas.horoscapp.ui.horoscope.HoroscopeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class LuckFragment : Fragment() {
+
+    private val horoscopeViewModel by viewModels<HoroscopeViewModel>()
 
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
