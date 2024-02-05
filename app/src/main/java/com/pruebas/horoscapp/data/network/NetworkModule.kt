@@ -1,6 +1,6 @@
 package com.pruebas.horoscapp.data.network
 
-import com.pruebas.horoscapp.BuildConfig.BASE_URL
+import com.pruebas.horoscapp.BuildConfig.BASE_URLS
 import com.pruebas.horoscapp.data.RepositoryImpl
 import com.pruebas.horoscapp.data.core.interceptors.AuthInterceptor
 import com.pruebas.horoscapp.domain.Repository
@@ -12,7 +12,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -24,7 +23,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit
             .Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URLS)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
