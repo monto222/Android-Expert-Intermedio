@@ -83,6 +83,5 @@ class HoroscopeDetailActivity : AppCompatActivity() {
 
     private fun loadingState() {
         binding.pb.isVisible = true
-
     }
 }
